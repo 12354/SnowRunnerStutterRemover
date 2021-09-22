@@ -100,6 +100,7 @@ namespace SnowRunnerStutterRemover
                     var savedPath = LoadSnowRunnerPath();
                     if (savedPath != null)
                     {
+                        targetExe = savedPath;
                         return;
                     }
 
