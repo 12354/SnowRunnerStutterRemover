@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SnowRunnerStutterHook
 {
@@ -22,20 +18,10 @@ namespace SnowRunnerStutterHook
         public static extern IntPtr GetWindowLong(IntPtr hWnd, int nIndex);
 
         [DllImport("advapi32.dll", CharSet = CharSet.Unicode)]
-        public static extern int RegOpenKeyEx(
-            UIntPtr hKey,
-            string subKey,
-            int ulOptions,
-            int samDesired,
-            out UIntPtr hkResult);
+        public static extern int RegOpenKeyEx(UIntPtr hKey, string subKey, int ulOptions, int samDesired, out UIntPtr hkResult);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Unicode, SetLastError = true)]
-        public delegate int RegOpenKeyExDelegate(
-            UIntPtr hKey,
-            string subKey,
-            int ulOptions,
-            int samDesired,
-            out UIntPtr hkResult);
+        public delegate int RegOpenKeyExDelegate(UIntPtr hKey, string subKey, int ulOptions, int samDesired, out UIntPtr hkResult);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate IntPtr WndProcDelegate(IntPtr hwnd, int msg, IntPtr wparam, IntPtr lparam);

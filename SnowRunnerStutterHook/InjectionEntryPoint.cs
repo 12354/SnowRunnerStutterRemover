@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Threading;
 using EasyHook;
 
 namespace SnowRunnerStutterHook
@@ -27,6 +28,7 @@ namespace SnowRunnerStutterHook
             RemoteHooking.IContext context,
             string channelName)
         {
+            Thread.CurrentThread.IsBackground = true;
             // Injection is now complete and the server interface is connected
             _server.IsInstalled(RemoteHooking.GetCurrentProcessId());
 
