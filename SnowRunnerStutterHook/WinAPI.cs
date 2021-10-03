@@ -16,6 +16,8 @@ namespace SnowRunnerStutterHook
 
         [DllImport("user32.dll")]
         public static extern IntPtr GetWindowLong(IntPtr hWnd, int nIndex);
+        [DllImport("user32.dll",CharSet = CharSet.Unicode)]
+        public static extern IntPtr GetWindowLongPtr(IntPtr hWnd, int nIndex);
 
         [DllImport("advapi32.dll", CharSet = CharSet.Unicode)]
         public static extern int RegOpenKeyEx(UIntPtr hKey, string subKey, int ulOptions, int samDesired, out UIntPtr hkResult);

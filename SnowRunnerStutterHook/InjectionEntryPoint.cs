@@ -101,11 +101,12 @@ namespace SnowRunnerStutterHook
             Log("Hooking WndProc");
             var hwnd = Process.GetCurrentProcess().MainWindowHandle;
             _originalWndProc = WinAPI.GetWindowLong(hwnd, WinAPI.GWL_WNDPROC);
-            
+            Log(WinAPI.GetWindowLongPtr(hwnd, WinAPI.GWL_WNDPROC).ToInt64().ToString("X"));
             //save this explicitly in a variable to prevent garbage collection
             _wndProcHook = WndProcDetour;
             
             WinAPI.SetWindowLong(hwnd, WinAPI.GWL_WNDPROC, Marshal.GetFunctionPointerForDelegate(_wndProcHook));
+            Log(WinAPI.GetWindowLongPtr(hwnd, WinAPI.GWL_WNDPROC).ToInt64().ToString("X"));
             Log("WndProc hook installed");
         }
         IntPtr WndProcDetour(IntPtr hwnd, int msg, IntPtr wparam, IntPtr lparam) 
