@@ -31,9 +31,12 @@ jobs:
           # Pack files
           # Pack to zip for Windows
            7z a -tzip "SnowRunnerStutterRemover.zip" "./SnowRunnerStutterStarter\bin\Release\*"
+           7z a -tzip "SnowRunnerStutterPatcher.zip" "./SnowRunnerStutterPatcher\bin\Release\*"
     - name: Publish
       uses: softprops/action-gh-release@v1
       with:
-       files: "SnowRunnerStutterRemover.zip"
+       files: |
+        SnowRunnerStutterRemover.zip
+        SnowRunnerStutterPatcher.zip
       env:
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
