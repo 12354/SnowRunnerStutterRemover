@@ -56,13 +56,22 @@ namespace SnowRunnerStutterPatcher
             var offset = scanner.CompiledFindPattern(Pattern);
             if (offset.Found)
             {
+                Console.WriteLine("Found patch location. Patching...");
                 for (var i = 0; i < Patch.Length; i++)
                 {
                     data[offset.Offset+i] = Patch[i];
                 }
+                File.WriteAllBytes(fn, data);
+                Console.WriteLine("Patch successful!");
             }
+            else
+            {
+                Console.WriteLine("Patch not found. Already patched? Exiting.");
+            }
+            Console.WriteLine("Press any key to exit.");
 
-            File.WriteAllBytes(fn, data);
+            Console.ReadKey();
+
         }
     }
 }
