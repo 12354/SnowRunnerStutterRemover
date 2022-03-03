@@ -23,7 +23,7 @@ jobs:
       run: nuget restore SnowRunnerStutterRemover.sln
  
     - name: Build and Publish Web App
-      run: msbuild SnowRunnerStutterRemover.sln /p:Configuration=Release /p:DeployOnBuild=true
+      run: msbuild SnowRunnerStutterRemover.sln /p:Configuration=Release /p:DeployOnBuild=true /p:Platform=x64
       
     - name: Build
       shell: bash
