@@ -1,5 +1,26 @@
 ## TL;DR:
 
+
+The patch notes for Season 18 indicate this fix is no longer needed:
+OTHER CHANGES
+Added a setting to disable automatic device list refresh when a new device is connected or disconnected (helps to prevent game stutters)
+
+Source: https://community.focus-entmt.com/focus-entertainment/snowrunner/blogs/414-patch-notes-42-season-18
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 I fixed the stuttering issue where your throttle cuts off:
 
 [Download SnowRunnerStutterRemover.zip](https://github.com/12354/SnowRunnerStutterRemover/releases/latest)
