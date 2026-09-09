@@ -20,7 +20,7 @@ Source: https://community.focus-entmt.com/focus-entertainment/snowrunner/blogs/4
 
 
 
-#old readme
+# Old readme
 I fixed the stuttering issue where your throttle cuts off:
 
 [Download SnowRunnerStutterRemover.zip](https://github.com/12354/SnowRunnerStutterRemover/releases/latest)
